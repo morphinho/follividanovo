@@ -553,21 +553,17 @@ function App() {
                         >
                           {videos.map((video, index) => (
                             <div key={index} className="w-full flex-shrink-0 px-2 md:px-4">
-                              <div className="max-w-[200px] md:max-w-sm mx-auto">
-                                <div className="bg-[#d4c4b4] border border-[#c4b4a4] p-3 md:p-4 rounded-2xl">
-                                  <div className="relative aspect-[9/16] bg-black overflow-hidden rounded-xl">
-                                    <video
-                                      src={video.src}
-                                      controls
-                                      className="w-full h-full object-cover"
-                                      playsInline
-                                    >
-                                      Seu navegador não suporta o elemento de vídeo.
-                                    </video>
-                                  </div>
-                                  <p className="text-center text-xs md:text-base text-gray-700 mt-2 md:mt-3 font-semibold">
-                                    {video.title}
-                                  </p>
+                              <div className="max-w-[280px] md:max-w-md mx-auto">
+                                <div className="relative aspect-[9/16] bg-transparent overflow-hidden rounded-2xl">
+                                  <video
+                                    src={video.src}
+                                    controls
+                                    className="w-full h-full object-cover rounded-2xl"
+                                    playsInline
+                                    preload="metadata"
+                                  >
+                                    Seu navegador não suporta o elemento de vídeo.
+                                  </video>
                                 </div>
                               </div>
                             </div>
