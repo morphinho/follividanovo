@@ -553,20 +553,22 @@ function App() {
                         >
                           {videos.map((video, index) => (
                             <div key={index} className="w-full flex-shrink-0 px-2 md:px-4">
-                              <div className="max-w-sm mx-auto">
-                                <div className="relative aspect-[9/16] bg-black overflow-hidden">
-                                  <video
-                                    src={video.src}
-                                    controls
-                                    className="w-full h-full object-cover"
-                                    playsInline
-                                  >
-                                    Seu navegador não suporta o elemento de vídeo.
-                                  </video>
+                              <div className="max-w-[200px] md:max-w-sm mx-auto">
+                                <div className="bg-[#d4c4b4] border border-[#c4b4a4] p-3 md:p-4 rounded-2xl">
+                                  <div className="relative aspect-[9/16] bg-black overflow-hidden rounded-xl">
+                                    <video
+                                      src={video.src}
+                                      controls
+                                      className="w-full h-full object-cover"
+                                      playsInline
+                                    >
+                                      Seu navegador não suporta o elemento de vídeo.
+                                    </video>
+                                  </div>
+                                  <p className="text-center text-xs md:text-base text-gray-700 mt-2 md:mt-3 font-semibold">
+                                    {video.title}
+                                  </p>
                                 </div>
-                                <p className="text-center text-sm md:text-base text-gray-700 mt-3 md:mt-4 font-semibold">
-                                  {video.title}
-                                </p>
                               </div>
                             </div>
                           ))}
