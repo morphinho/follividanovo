@@ -4,6 +4,7 @@ import { useState } from 'react';
 function App() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [currentBenefit, setCurrentBenefit] = useState(0);
+  const [currentVideo, setCurrentVideo] = useState(0);
 
   const scrollToOffer = () => {
     document.getElementById('offer')?.scrollIntoView({ behavior: 'smooth' });
@@ -521,6 +522,91 @@ function App() {
               })()}
             </div>
 
+            {/* Video Testimonials Slider */}
+            <div className="mt-8 md:mt-12">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-4 md:mb-6 px-2 text-gray-900">
+                Depoimentos em <span className="text-[#8B6F47]">Vídeo</span>
+              </h3>
+              
+              <div className="relative">
+                {(() => {
+                  const videos = [
+                    { src: '/01.mp4', title: 'Depoimento 01' },
+                    { src: '/02.mp4', title: 'Depoimento 02' },
+                    { src: '/03.mp4', title: 'Depoimento 03' }
+                  ];
+
+                  const nextVideo = () => {
+                    setCurrentVideo((prev) => (prev + 1) % videos.length);
+                  };
+
+                  const prevVideo = () => {
+                    setCurrentVideo((prev) => (prev - 1 + videos.length) % videos.length);
+                  };
+
+                  return (
+                    <>
+                      <div className="overflow-hidden">
+                        <div
+                          className="flex transition-transform duration-500 ease-out"
+                          style={{ transform: `translateX(-${currentVideo * 100}%)` }}
+                        >
+                          {videos.map((video, index) => (
+                            <div key={index} className="w-full flex-shrink-0 px-2 md:px-4">
+                              <div className="bg-[#d4c4b4] border border-[#c4b4a4] p-4 md:p-6 rounded-xl max-w-3xl mx-auto">
+                                <div className="relative aspect-video bg-black rounded-lg overflow-hidden">
+                                  <video
+                                    src={video.src}
+                                    controls
+                                    className="w-full h-full object-contain"
+                                    playsInline
+                                  >
+                                    Seu navegador não suporta o elemento de vídeo.
+                                  </video>
+                                </div>
+                                <p className="text-center text-sm md:text-base text-gray-700 mt-3 md:mt-4 font-semibold">
+                                  {video.title}
+                                </p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      <button
+                        onClick={prevVideo}
+                        className="absolute left-0 top-1/2 -translate-y-1/2 bg-[#5D4E37]/20 hover:bg-[#5D4E37]/40 p-2 md:p-3 rounded-full transition-all -translate-x-2 md:translate-x-0"
+                        aria-label="Vídeo anterior"
+                      >
+                        <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-[#5D4E37]" />
+                      </button>
+
+                      <button
+                        onClick={nextVideo}
+                        className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#5D4E37]/20 hover:bg-[#5D4E37]/40 p-2 md:p-3 rounded-full transition-all translate-x-2 md:translate-x-0"
+                        aria-label="Próximo vídeo"
+                      >
+                        <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-[#5D4E37]" />
+                      </button>
+
+                      <div className="flex justify-center gap-2 mt-4 md:mt-6">
+                        {videos.map((_, index) => (
+                          <button
+                            key={index}
+                            onClick={() => setCurrentVideo(index)}
+                            className={`w-2 h-2 rounded-full transition-all ${
+                              index === currentVideo ? 'bg-[#5D4E37] w-8' : 'bg-[#5D4E37]/30'
+                            }`}
+                            aria-label={`Ir para vídeo ${index + 1}`}
+                          />
+                        ))}
+                      </div>
+                    </>
+                  );
+                })()}
+              </div>
+            </div>
+
             <div className="mt-8 md:mt-12 text-center px-4">
               <button
                 onClick={scrollToOffer}
@@ -552,49 +638,49 @@ function App() {
               />
             </div>
 
-            <div className="grid md:grid-cols-2 gap-4 md:gap-8 mb-6 md:mb-8">
-              <div className="bg-[#d4c4b4] p-5 md:p-8 rounded-xl border border-[#c4b4a4]">
-                <div className="text-red-600 font-bold text-xs md:text-sm mb-2">ANTES</div>
-                <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-gray-900">Sem o FolliVida</h3>
-                <ul className="space-y-2 md:space-y-3">
-                  <li className="flex items-start gap-2 md:gap-3">
-                    <div className="w-2 h-2 bg-red-500 rounded-full mt-1.5 md:mt-2 flex-shrink-0"></div>
-                    <span className="text-sm md:text-base text-gray-700">Cabelos fracos e sem brilho</span>
+            <div className="grid grid-cols-2 gap-2 md:gap-8 mb-6 md:mb-8">
+              <div className="bg-[#d4c4b4] p-3 md:p-8 rounded-xl border border-[#c4b4a4]">
+                <div className="text-red-600 font-bold text-xs md:text-sm mb-1 md:mb-2">ANTES</div>
+                <h3 className="text-base md:text-2xl font-bold mb-2 md:mb-4 text-gray-900">Sem o FolliVida</h3>
+                <ul className="space-y-1.5 md:space-y-3">
+                  <li className="flex items-start gap-1.5 md:gap-3">
+                    <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-red-500 rounded-full mt-1 md:mt-2 flex-shrink-0"></div>
+                    <span className="text-xs md:text-base text-gray-700 leading-tight">Cabelos fracos e sem brilho</span>
                   </li>
-                  <li className="flex items-start gap-2 md:gap-3">
-                    <div className="w-2 h-2 bg-red-500 rounded-full mt-1.5 md:mt-2 flex-shrink-0"></div>
-                    <span className="text-sm md:text-base text-gray-700">Unhas quebradiças e descamando</span>
+                  <li className="flex items-start gap-1.5 md:gap-3">
+                    <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-red-500 rounded-full mt-1 md:mt-2 flex-shrink-0"></div>
+                    <span className="text-xs md:text-base text-gray-700 leading-tight">Unhas quebradiças e descamando</span>
                   </li>
-                  <li className="flex items-start gap-2 md:gap-3">
-                    <div className="w-2 h-2 bg-red-500 rounded-full mt-1.5 md:mt-2 flex-shrink-0"></div>
-                    <span className="text-sm md:text-base text-gray-700">Queda excessiva de cabelo</span>
+                  <li className="flex items-start gap-1.5 md:gap-3">
+                    <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-red-500 rounded-full mt-1 md:mt-2 flex-shrink-0"></div>
+                    <span className="text-xs md:text-base text-gray-700 leading-tight">Queda excessiva de cabelo</span>
                   </li>
-                  <li className="flex items-start gap-2 md:gap-3">
-                    <div className="w-2 h-2 bg-red-500 rounded-full mt-1.5 md:mt-2 flex-shrink-0"></div>
-                    <span className="text-sm md:text-base text-gray-700">Baixa autoestima</span>
+                  <li className="flex items-start gap-1.5 md:gap-3">
+                    <div className="w-1.5 h-1.5 md:w-2 md:h-2 bg-red-500 rounded-full mt-1 md:mt-2 flex-shrink-0"></div>
+                    <span className="text-xs md:text-base text-gray-700 leading-tight">Baixa autoestima</span>
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-[#c4b4a4] p-5 md:p-8 rounded-xl border border-[#b4a494]">
-                <div className="text-[#5D4E37] font-bold text-xs md:text-sm mb-2">DEPOIS</div>
-                <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-gray-900">Com o FolliVida</h3>
-                <ul className="space-y-2 md:space-y-3">
-                  <li className="flex items-start gap-2 md:gap-3">
-                    <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-[#5D4E37] flex-shrink-0" />
-                    <span className="text-sm md:text-base text-gray-800">Cabelos mais fortes e brilhantes</span>
+              <div className="bg-[#c4b4a4] p-3 md:p-8 rounded-xl border border-[#b4a494]">
+                <div className="text-[#5D4E37] font-bold text-xs md:text-sm mb-1 md:mb-2">DEPOIS</div>
+                <h3 className="text-base md:text-2xl font-bold mb-2 md:mb-4 text-gray-900">Com o FolliVida</h3>
+                <ul className="space-y-1.5 md:space-y-3">
+                  <li className="flex items-start gap-1.5 md:gap-3">
+                    <CheckCircle className="w-4 h-4 md:w-6 md:h-6 text-[#5D4E37] flex-shrink-0" />
+                    <span className="text-xs md:text-base text-gray-800 leading-tight">Cabelos mais fortes e brilhantes</span>
                   </li>
-                  <li className="flex items-start gap-2 md:gap-3">
-                    <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-[#5D4E37] flex-shrink-0" />
-                    <span className="text-sm md:text-base text-gray-800">Unhas resistentes e bonitas</span>
+                  <li className="flex items-start gap-1.5 md:gap-3">
+                    <CheckCircle className="w-4 h-4 md:w-6 md:h-6 text-[#5D4E37] flex-shrink-0" />
+                    <span className="text-xs md:text-base text-gray-800 leading-tight">Unhas resistentes e bonitas</span>
                   </li>
-                  <li className="flex items-start gap-2 md:gap-3">
-                    <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-[#5D4E37] flex-shrink-0" />
-                    <span className="text-sm md:text-base text-gray-800">Redução visível da queda</span>
+                  <li className="flex items-start gap-1.5 md:gap-3">
+                    <CheckCircle className="w-4 h-4 md:w-6 md:h-6 text-[#5D4E37] flex-shrink-0" />
+                    <span className="text-xs md:text-base text-gray-800 leading-tight">Redução visível da queda</span>
                   </li>
-                  <li className="flex items-start gap-2 md:gap-3">
-                    <CheckCircle className="w-5 h-5 md:w-6 md:h-6 text-[#5D4E37] flex-shrink-0" />
-                    <span className="text-sm md:text-base text-gray-800">Confiança renovada</span>
+                  <li className="flex items-start gap-1.5 md:gap-3">
+                    <CheckCircle className="w-4 h-4 md:w-6 md:h-6 text-[#5D4E37] flex-shrink-0" />
+                    <span className="text-xs md:text-base text-gray-800 leading-tight">Confiança renovada</span>
                   </li>
                 </ul>
               </div>
