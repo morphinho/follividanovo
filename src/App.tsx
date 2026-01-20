@@ -806,27 +806,14 @@ function App() {
                   <div className="relative">
                     <div className="bg-white rounded-xl p-6 md:p-8 shadow-2xl border-2 border-green-500/30">
                       <div className="flex flex-col items-center">
-                        {/* ANVISA Logo - Simplified version */}
                         <div className="mb-4">
-                          <div className="relative w-20 h-20 md:w-24 md:h-24 mx-auto">
-                            {/* Green Cross */}
-                            <div className="absolute inset-0 flex items-center justify-center">
-                              <div className="w-12 h-12 md:w-16 md:h-16 border-4 border-green-600 relative">
-                                <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-green-600 transform -translate-y-1/2"></div>
-                              </div>
-                            </div>
-                            {/* Yellow Eye Curve */}
-                            <div className="absolute top-2 left-1/2 transform -translate-x-1/2">
-                              <div className="w-8 h-4 md:w-10 md:h-5 border-2 border-yellow-500 rounded-t-full border-b-0"></div>
-                            </div>
-                            {/* Blue Dot */}
-                            <div className="absolute top-3 left-1/2 transform -translate-x-1/2">
-                              <div className="w-2 h-2 md:w-2.5 md:h-2.5 bg-blue-600 rounded-full"></div>
-                            </div>
-                          </div>
+                          <img
+                            src="/anvisa-logo.png"
+                            alt="Logo ANVISA - Agência Nacional de Vigilância Sanitária"
+                            className="w-32 h-32 md:w-40 md:h-40 object-contain mx-auto"
+                          />
                         </div>
                         <div className="text-center">
-                          <p className="text-2xl md:text-3xl font-bold text-blue-600 tracking-wide">ANVISA</p>
                           <p className="text-xs md:text-sm text-gray-600 mt-2">Agência Nacional de Vigilância Sanitária</p>
                         </div>
                       </div>
