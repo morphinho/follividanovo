@@ -1,4 +1,4 @@
-import { Shield, Sparkles, Heart, Award, ChevronDown, CheckCircle, Lock, TrendingUp, Users, Star, ChevronLeft, ChevronRight, Package } from 'lucide-react';
+import { Shield, Sparkles, Heart, Award, ChevronDown, CheckCircle, Lock, TrendingUp, Users, Star, ChevronLeft, ChevronRight, Package, FlaskConical, FileCheck, Pill, Truck } from 'lucide-react';
 import { useState } from 'react';
 
 function App() {
@@ -732,6 +732,108 @@ function App() {
                   <div className="flex items-center gap-2 bg-white/50 border border-[#b4a494] px-3 py-2 md:px-4 md:py-2 rounded-lg">
                     <Award className="w-4 h-4 md:w-5 md:h-5 text-[#5D4E37]" />
                     <span className="text-xs md:text-sm text-gray-800">Produto Premium</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ANVISA Section */}
+      <section className="py-12 md:py-20 bg-[#5D4E37] relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#C9A96E] rounded-full filter blur-3xl"></div>
+          <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[#8B6F47] rounded-full filter blur-3xl"></div>
+        </div>
+
+        <div className="container mx-auto px-4 relative">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+              {/* Left Side - Content */}
+              <div>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 md:mb-8 text-white">
+                  Qualidade, Segurança e Confiança em Cada Frasco
+                </h2>
+
+                <div className="space-y-4 md:space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-white/10 rounded-full flex items-center justify-center border border-white/20">
+                      <FlaskConical className="w-6 h-6 md:w-7 md:h-7 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg md:text-xl font-semibold text-white mb-1">Produzido em laboratórios certificados</h3>
+                      <p className="text-gray-200 text-sm md:text-base">Fabricação seguindo os mais altos padrões de qualidade e segurança.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-white/10 rounded-full flex items-center justify-center border border-white/20">
+                      <FileCheck className="w-6 h-6 md:w-7 md:h-7 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg md:text-xl font-semibold text-white mb-1">Produto notificado pela Anvisa</h3>
+                      <p className="text-gray-200 text-sm md:text-base">Regularizado e em conformidade com a Agência Nacional de Vigilância Sanitária.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-white/10 rounded-full flex items-center justify-center border border-white/20">
+                      <Pill className="w-6 h-6 md:w-7 md:h-7 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg md:text-xl font-semibold text-white mb-1">Ingredientes premium com laudos de pureza</h3>
+                      <p className="text-gray-200 text-sm md:text-base">Matérias-primas selecionadas e testadas para garantir máxima eficácia.</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 bg-white/10 rounded-full flex items-center justify-center border border-white/20">
+                      <Truck className="w-6 h-6 md:w-7 md:h-7 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg md:text-xl font-semibold text-white mb-1">Envio rápido, discreto e seguro</h3>
+                      <p className="text-gray-200 text-sm md:text-base">Entrega eficiente com total privacidade e segurança em todo o Brasil.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Side - ANVISA Logo */}
+              <div className="flex justify-center md:justify-end">
+                <div className="relative bg-white/5 backdrop-blur-sm border-2 border-white/20 rounded-2xl p-8 md:p-12 max-w-md w-full">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-2xl"></div>
+                  <div className="relative">
+                    <div className="bg-white rounded-xl p-6 md:p-8 shadow-2xl border-2 border-green-500/30">
+                      <div className="flex flex-col items-center">
+                        {/* ANVISA Logo - Simplified version */}
+                        <div className="mb-4">
+                          <div className="relative w-20 h-20 md:w-24 md:h-24 mx-auto">
+                            {/* Green Cross */}
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <div className="w-12 h-12 md:w-16 md:h-16 border-4 border-green-600 relative">
+                                <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-green-600 transform -translate-y-1/2"></div>
+                              </div>
+                            </div>
+                            {/* Yellow Eye Curve */}
+                            <div className="absolute top-2 left-1/2 transform -translate-x-1/2">
+                              <div className="w-8 h-4 md:w-10 md:h-5 border-2 border-yellow-500 rounded-t-full border-b-0"></div>
+                            </div>
+                            {/* Blue Dot */}
+                            <div className="absolute top-3 left-1/2 transform -translate-x-1/2">
+                              <div className="w-2 h-2 md:w-2.5 md:h-2.5 bg-blue-600 rounded-full"></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="text-center">
+                          <p className="text-2xl md:text-3xl font-bold text-blue-600 tracking-wide">ANVISA</p>
+                          <p className="text-xs md:text-sm text-gray-600 mt-2">Agência Nacional de Vigilância Sanitária</p>
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-center text-white/80 text-xs md:text-sm mt-4 font-medium">
+                      Produto regularizado e aprovado
+                    </p>
                   </div>
                 </div>
               </div>
