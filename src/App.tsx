@@ -757,6 +757,58 @@ function App() {
             </p>
 
             <div className="space-y-4 md:space-y-5 mb-6 md:mb-8">
+              {/* Card COMPRE 1 POTE */}
+              <div className="flex justify-center">
+                <div className="w-full max-w-sm">
+                  <div className="relative bg-[#3d3228] p-4 md:p-6 rounded-xl shadow-2xl transition-all hover:scale-[1.02] border border-[#5a4a3a]">
+                    <div className="text-center mb-2 md:mb-3">
+                      <div className="inline-block bg-[#5D4E37] text-white px-3 py-1 md:px-4 md:py-1.5 rounded-lg text-xs md:text-sm font-bold mb-2">
+                        COMPRE 1 POTE
+                      </div>
+                      <div className="bg-[#8B6F47] text-white px-4 py-1.5 md:px-5 md:py-2 rounded-lg text-xs md:text-sm font-semibold inline-block">
+                        TRATAMENTO PARA 1 MÊS
+                      </div>
+                    </div>
+
+                    <div className="flex justify-center mb-4 md:mb-5">
+                      <img
+                        src="/produto-para-formula_(1)-r5p0sz-q.webp"
+                        alt="FolliVida 1 frasco"
+                        className="w-full max-w-[120px] md:max-w-[150px] h-auto object-contain"
+                      />
+                    </div>
+
+                    <div className="text-center mb-3 md:mb-4 space-y-1.5">
+                      <p className="text-gray-400 text-xs md:text-sm">De R$269,00 por</p>
+
+                      <div className="bg-[#5a4a3a] rounded-lg p-2.5 md:p-3 border border-[#6a5a4a]">
+                        <p className="text-xl md:text-2xl font-bold text-[#f4d4a4] mb-1">12x de R$24,39</p>
+                        <p className="text-xs md:text-sm text-gray-300">Ou R$ 237,00 à vista</p>
+                      </div>
+
+                      <div className="inline-flex items-center gap-1.5 bg-green-600/30 text-green-400 px-2.5 py-1 rounded-full text-xs font-semibold border border-green-600/40">
+                        <span className="text-green-400">⚡</span>
+                        Economia de R$90,00
+                      </div>
+                    </div>
+
+                    <a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full text-center bg-[#d4a574] hover:bg-[#c49564] text-[#1A1612] px-4 py-2.5 md:px-5 md:py-3 rounded-lg font-bold text-sm hover:scale-[1.02] active:scale-95 transition-all shadow-lg uppercase tracking-wide"
+                    >
+                      COMPRAR AGORA!
+                    </a>
+
+                    <div className="mt-3 flex items-center justify-center gap-1.5 text-gray-300">
+                      <Package className="w-3.5 h-3.5 text-[#d4a574]" />
+                      <span className="text-xs">Frete grátis para todo o Brasil</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <div className="flex justify-center">
                 <div className="w-full max-w-md">
                   <div className="relative bg-[#3d3228] p-4 md:p-6 rounded-xl shadow-2xl transition-all hover:scale-[1.02] border-2 border-yellow-500">
